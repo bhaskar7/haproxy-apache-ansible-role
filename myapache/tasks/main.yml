@@ -1,0 +1,15 @@
+---
+# tasks file for myapache
+- package: 
+   name: "httpd"
+- copy:
+   dest: "/var/www/html/index.html"
+   src: index.html
+- service:
+   name: firewalld
+   state: stopped
+- service:
+   name: "httpd"
+   state: restarted   
+
+

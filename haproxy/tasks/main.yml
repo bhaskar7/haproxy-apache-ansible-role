@@ -1,0 +1,13 @@
+---
+# tasks file for haproxy
+- package:
+   name: "haproxy"
+- template:
+   dest: "/etc/haproxy/haproxy.cfg"
+   src: "haproxy.cfg"
+- service:
+   name: firewalld
+   state: stopped
+- service:
+   name: "haproxy"
+   state: restarted
